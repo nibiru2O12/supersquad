@@ -1,4 +1,4 @@
-import character_json from '../data/character.json';
+import character_json from '../data/characters.json';
 
 function character(state = character_json,action){
   switch (action.type) {
@@ -7,3 +7,5 @@ function character(state = character_json,action){
 
   }
 }
+
+export default character;
