@@ -4,7 +4,7 @@ import CharacterList from './CharacterList.js';
 class App extends Component{
   render(){
     return(
-      <div>
+      <div className="App">
         <h2>Super Squad</h2>
         <CharacterList />
       </div>
