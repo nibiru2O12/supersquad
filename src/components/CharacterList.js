@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {addCharacterById} from '../action';
 
 class CharacterList extends Component{
   render(){
@@ -13,6 +15,9 @@ class CharacterList extends Component{
               return (
                 <li key={item.id}>
                   <div>{item.name}</div>
+                  <div onClick={()=> this.props.addCharacterById(item.id)}>
+                    +
+                  </div>
                 </li>
               )
             })
@@ -29,4 +34,8 @@ function mapStateToProps(state){
   };
 }
 
-export default connect(mapStateToProps,null)(CharacterList);
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({addCharacterById},dispatch)
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CharacterList);
