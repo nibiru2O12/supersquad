@@ -1,4 +1,5 @@
 export const ADD_CHARCTER = "ADD_CHARACTER";
+export const REMOVE_HERO ="REMOVE_HERO"
 
 export function addCharacterById(id){
   const action = {
@@ -6,4 +7,12 @@ export function addCharacterById(id){
     id
   };
   return action
+}
+
+export function removeHeroById(id){
+  const action={
+    type:REMOVE_HERO,
+    id
+  };
+  return action;
 }

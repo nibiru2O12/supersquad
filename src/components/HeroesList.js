@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import {removeHeroById} from '../action';
 
 class HeroesList extends Component{
   render(){
@@ -7,7 +8,7 @@ class HeroesList extends Component{
 
     return(
       <div>
-        <h2>Heroes</h2>
+        <h4>Squad List</h4>
         <ul className="list-group">
           {
             this.props.heroes.map(item=>{
@@ -16,7 +17,8 @@ class HeroesList extends Component{
                   <div className="list-item">
                     {item.name}
                   </div>
-                  <div className="list-item right-button">
+                  <div className="list-item right-button"
+                    onClick={()=> this.props.removeHeroById(item.id)}>
                     -
                   </div>
                 </li>
@@ -35,4 +37,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps,null)(HeroesList);
+export default connect(mapStateToProps,{removeHeroById})(HeroesList);
