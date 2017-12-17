@@ -1,14 +1,10 @@
-import character_json from '../data/characters.json';
-import {ADD_CHARCTER} from '../action';
+import {combineReducers} from 'redux';
+import {heroes} from './heroes_reducer';
+import {characters} from './characters_reducer.js';
 
-function character(state = character_json,action){
-  switch (action.type) {
-    case ADD_CHARCTER:
-      return state.filter(item => item.id !== action.id );
-    break;
-  default:
-    return state;
-  }
-}
+// listen for both characters and heroes reducer
+const rootReducer=combineReducers({
+  characters,heroes
+});
 
-export default character;
+export default rootReducer;
