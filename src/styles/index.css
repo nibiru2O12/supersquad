@@ -18,3 +18,8 @@ body{
 .list-item{
   display: inline;
 }
+
+.clear-squad{
+  text-transform: uppercase;
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import character_json from '../data/characters.json';
-import {ADD_CHARCTER,REMOVE_HERO} from '../action';
+import {addCharacter} from './helpers';
+import {ADD_CHARCTER,REMOVE_HERO,CLEAR_HERO} from '../action';
 
 export function characters(state = character_json,action){
   switch (action.type) {
@@ -9,11 +10,9 @@ export function characters(state = character_json,action){
     case REMOVE_HERO:
       return [...state,addCharacter(action.id)];
       break;
+    case CLEAR_HERO:
+      return [...character_json];
   default:
     return state;
   }
-}
-
-export function addCharacter(id){
-  return character_json.find(i=>i.id===id);
 }

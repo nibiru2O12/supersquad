@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class CharacterList extends Component{
   render(){
@@ -24,6 +25,11 @@ class CharacterList extends Component{
       </div>
     )
   }
+}
+
+CharacterList.propTypes={
+  characters:PropTypes.array,
+  onAddClick: PropTypes.func
 }
 
 export default CharacterList;

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
-import {addCharacterById,removeHeroById} from '../action';
+import {addCharacterById,removeHeroById,clearHeroList} from '../action';
 
 import CharacterList from './CharacterList.js';
 import HeroesList from './HeroesList.js';
@@ -12,10 +12,14 @@ class App extends Component{
       <div className="App">
         <h2>Super Squad</h2>
         <div className="col-md-6">
-          <CharacterList characters={this.props.characters} onAddClick={this.props.addCharacterById} />
+          <CharacterList characters={this.props.characters}
+            onAddClick={this.props.addCharacterById} />
         </div>
         <div className="col-md-6">
-          <HeroesList heroes={this.props.heroes} onRemoveClick={this.props.removeHeroById} />
+          <HeroesList heroes={this.props.heroes}
+            onRemoveClick={this.props.removeHeroById}
+            onClearClick={this.props.clearHeroList}
+           />
         </div>
       </div>
 
@@ -30,4 +34,4 @@ function myStateToProps(state){
   }
 }
 
-export default connect(myStateToProps,{removeHeroById,addCharacterById})(App);
+export default connect(myStateToProps,{removeHeroById,addCharacterById,clearHeroList})(App);

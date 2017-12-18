@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 
 class HeroesList extends Component{
   render(){
@@ -7,6 +8,11 @@ class HeroesList extends Component{
     return(
       <div>
         <h4>Squad List</h4>
+
+        <small>
+          <a className="clear-squad" onClick={this.props.onClearClick}>clear squad</a>
+        </small>
+
         <ul className="list-group">
           {
             this.props.heroes.map(item=>{
@@ -27,6 +33,11 @@ class HeroesList extends Component{
       </div>
     );
   }
+}
+
+HeroesList.propTypes={
+  heroes:PropTypes.array,
+  onRemoveClick: PropTypes.func
 }
 
 export default HeroesList;
