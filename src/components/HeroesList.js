@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
+import CharacterStats from './CharacterStats';
 
 class HeroesList extends Component{
   render(){
@@ -25,6 +26,11 @@ class HeroesList extends Component{
                     onClick={()=> this.props.onRemoveClick(item.id)}>
                     -
                   </div>
+                  <CharacterStats
+                    stats={[{stats:"STR",value:item.strength},
+                            {stats:"INT",value:item.intelligence},
+                            {stats: "SPD",value:item.speed}]}
+                  />
                 </li>
               )
             })

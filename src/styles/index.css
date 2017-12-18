@@ -23,3 +23,8 @@ body{
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.hero-stats li{
+  display: inline-block;
+  margin-right: 10px;
+}
