@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
 import './styles/index.css';
+import './styles/flat-icons/flaticon.css'
 
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import rootReducer from './reducers';
 import {addCharacterById} from './action';
+
 
 const store=createStore(rootReducer);
 console.log('createStore()',store.getState());

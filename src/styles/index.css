@@ -28,3 +28,7 @@ body{
   display: inline-block;
   margin-right: 10px;
 }
+.hero-stats .stat-value{
+  font-weight: bold;
+  margin-left: 10px;
+}

@@ -21,9 +21,7 @@ class CharacterList extends Component{
                     +
                   </div>
                   <CharacterStats
-                    stats={[{stats:"STR",value:item.strength},
-                            {stats:"INT",value:item.intelligence},
-                            {stats: "SPD",value:item.speed}]}
+                    stats={{str:item.strength,int:item.intelligence,spd:item.speed}}
                   />
                 </li>
               )
