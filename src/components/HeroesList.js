@@ -4,7 +4,9 @@ import CharacterStats from './CharacterStats';
 
 class HeroesList extends Component{
   render(){
-    console.log(this.props);
+
+    let heroes = this.props.heroes;
+    let maxHeroes = this.props.max;
 
     return(
       <div>
@@ -16,7 +18,7 @@ class HeroesList extends Component{
 
         <ul className="list-group">
           {
-            this.props.heroes.map(item=>{
+            heroes.map(item=>{
               return(
                 <li key={item.id} className="list-group-item">
                   <div className="list-item">
@@ -33,7 +35,11 @@ class HeroesList extends Component{
               )
             })
           }
+          <li className="list-group-item">
+            <b>Total Memeber :</b>{heroes.length} / {maxHeroes}
+          </li>
         </ul>
+
       </div>
     );
   }

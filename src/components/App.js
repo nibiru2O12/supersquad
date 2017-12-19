@@ -18,13 +18,15 @@ class App extends Component{
             onAddClick={this.props.addCharacterById} />
         </div>
         <div className="col-md-4">
-          <HeroesList heroes={this.props.heroes}
+          <HeroesList
+            heroes={this.props.heroes}
             onRemoveClick={this.props.removeHeroById}
             onClearClick={this.props.clearHeroList}
+            max={5}
            />
         </div>
         <div className="col-md-4">
-          <SquadStats heroes={this.props.heroes} />
+          <SquadStats heroes={this.props.heroes}  />
         </div>
       </div>
 
